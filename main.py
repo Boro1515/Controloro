@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext
-import fitz  # PyMuPDF
+import fitz
 import re
 
 def analyze_pdf(file_path, threshold_rpe=0.30, threshold_riso=1.0):
@@ -176,30 +176,31 @@ def open_pdf():
         messagebox.showerror("Chyba", f"Nastala chyba při zpracování PDF:\n{str(e)}")
 
 # === GUI ===
-root = tk.Tk()
-root.title("Kontrola spotřebičů v PDF")
-root.geometry("800x600")
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Kontrola spotřebičů v PDF")
+    root.geometry("800x600")
 
-label = tk.Label(root, text="Vyber PDF soubor pro kontrolu měřených hodnot:")
-label.pack(pady=10)
+    label = tk.Label(root, text="Vyber PDF soubor pro kontrolu měřených hodnot:")
+    label.pack(pady=10)
 
-btn = tk.Button(root, text="📄 Vybrat PDF", command=open_pdf)
-btn.pack(pady=5)
+    btn = tk.Button(root, text="📄 Vybrat PDF", command=open_pdf)
+    btn.pack(pady=5)
 
-# Hledání
-search_frame = tk.Frame(root)
-search_frame.pack(pady=5)
+    # Hledání
+    search_frame = tk.Frame(root)
+    search_frame.pack(pady=5)
 
-search_entry = tk.Entry(search_frame, width=40)
-search_entry.pack(side=tk.LEFT, padx=5)
+    search_entry = tk.Entry(search_frame, width=40)
+    search_entry.pack(side=tk.LEFT, padx=5)
 
-search_button = tk.Button(search_frame, text="🔍 Hledat", command=search_text)
-search_button.pack(side=tk.LEFT)
+    search_button = tk.Button(search_frame, text="🔍 Hledat", command=search_text)
+    search_button.pack(side=tk.LEFT)
 
-# Výstup
-output_text = scrolledtext.ScrolledText(root, width=90, height=25)
-output_text.pack(padx=10, pady=10)
-output_text.config(state="disabled")
-output_text.tag_config("highlight", background="yellow", foreground="black")
+    # Výstup
+    output_text = scrolledtext.ScrolledText(root, width=90, height=25)
+    output_text.pack(padx=10, pady=10)
+    output_text.config(state="disabled")
+    output_text.tag_config("highlight", background="yellow", foreground="black")
 
-root.mainloop()
+    root.mainloop()

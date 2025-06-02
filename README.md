@@ -18,6 +18,12 @@ Aplikace byla otestována jak pomocí unit testů, tak i manuálního testován�
 Unit testy testují funkčnost analyzátoru PDF (`analyze_pdf`) pomocí mockovaných vstupů.  
 Manuální testování probíhalo podle dokumentace, která zahrnuje testování GUI, uživatelských akcí a chování při chybách.
 
+## Dokumentace testování
+
+- [Testovací scénáře a test case (PDF)](Test_documents/Test_scenario_and_cases.pdf)
+- [Test Execution Report (PDF)](Test_documents/Controloro_Report.pdf)
+
+
 
 ## Cíl aplikace
 Cílem této aplikace je usnadnit elektrotechnikům a revizním pracovníkům kontrolu naměřených hodnot z elektrospotřebičů bez nutnosti ručního pročítání PDF zpráv.  
